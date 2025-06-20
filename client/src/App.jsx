@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
-import Dashboard from "./pages/Dashboard";
+import RoleDashboard from "./pages/RoleDashboard";
 import ProtectedRoute from "./utils/ProtectedRoute";
 import { Toaster } from "sonner";
 
@@ -18,7 +18,7 @@ export default function App() {
           path="/dashboard"
           element={
             <ProtectedRoute>
-              <Dashboard />
+              <RoleDashboard />
             </ProtectedRoute>
           }
         />

@@ -8,16 +8,17 @@ import { Link } from "react-router-dom"
 
 
 export default function Signup() {
+  const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleSignup = async () => {
-    if (!email || !password) return alert("All fields required");
+    if (!username || !email || !password) return alert("All fields required");
     setLoading(true);
     try {
-      const res = await API.post("/auth/signup", { email, password });
+      const res = await API.post("/auth/signup", { username, email, password });
       localStorage.setItem("token", res.data.token);
       navigate("/dashboard");
     } catch (err) {
@@ -34,6 +35,12 @@ export default function Signup() {
           <CardTitle className="text-center text-2xl font-bold">Sign Up</CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
+          <Input
+            type="text"
+            placeholder="Username"
+            value={username}
+            onChange={e => setUsername(e.target.value)}
+          />
           <Input
             type="email"
             placeholder="Email"

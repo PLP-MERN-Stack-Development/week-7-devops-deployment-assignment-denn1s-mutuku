@@ -5,7 +5,7 @@ import TaskDialog from "../components/TaskDialog";
 import Navbar from "../components/Navbar";
 import { toast } from "sonner";
 
-export default function Dashboard() {
+export default function DeveloperDashboard() {
   const [tasks, setTasks] = useState([]);
 
   const load = async () => {
@@ -38,8 +38,18 @@ export default function Dashboard() {
       <Navbar />
       <main className="max-w-5xl mx-auto p-4">
         <div className="flex justify-between items-center mb-6">
-          <h1 className="text-2xl font-bold">My Tasks</h1>
+          <div>
+            <h1 className="text-2xl font-bold">Developer Dashboard</h1>
+            <p className="text-gray-600 dark:text-gray-300">Manage your personal tasks</p>
+          </div>
           <TaskDialog onSubmit={createTask} />
+        </div>
+
+        <div className="mb-4 p-4 bg-green-50 dark:bg-green-900/20 rounded-lg border border-green-200 dark:border-green-800">
+          <h2 className="font-semibold text-green-900 dark:text-green-100">Developer View</h2>
+          <p className="text-sm text-green-700 dark:text-green-300">
+            You can create, edit, and delete your own tasks. Total tasks: {tasks.length}
+          </p>
         </div>
 
         <section
