@@ -14,6 +14,6 @@ exports.getMyTasks = async (req, res) => {
 
 // GET /api/tasks/all
 exports.getAllTasks = async (req, res) => {
-    const tasks = await Task.find().poplulate("owner", "email");
+    const tasks = await Task.find().populate("owner", "email");
     res.json(tasks);
 };
