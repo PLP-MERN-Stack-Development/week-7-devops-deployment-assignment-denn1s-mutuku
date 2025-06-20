@@ -1,5 +1,5 @@
 import {
-  Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle,
+  Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle, DialogDescription,
   DialogFooter, DialogClose
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
@@ -26,6 +26,9 @@ export default function TaskDialog({ onSubmit }) {
       <DialogContent>
         <DialogHeader>
           <DialogTitle>New Task</DialogTitle>
+          <DialogDescription>
+            Create a new task by providing a title and description.
+          </DialogDescription>
         </DialogHeader>
 
         <Input placeholder="Title" value={title} onChange={e => setTitle(e.target.value)} />
