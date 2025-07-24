@@ -1,12 +1,45 @@
-# Created by https://www.toptal.com/developers/gitignore/api/git
-# Edit at https://www.toptal.com/developers/gitignore?templates=git
+# Node dependencies
+node_modules/
+client/node_modules/
+server/node_modules/
 
-### Git ###
-# Created by git for backups. To disable backups in Git:
-# $ git config --global mergetool.keepBackup false
+# Vite build output
+dist/
+client/dist/
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Env files
+.env
+.env.local
+.env.*.local
+
+# IDE/editor files
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Optional OS junk
+*.tgz
+*.zip
+
+# macOS system files
+._*
+
+# Git conflict backups
 *.orig
-
-# Created by git when using merge tools for conflicts
 *.BACKUP.*
 *.BASE.*
 *.LOCAL.*
@@ -15,5 +48,3 @@
 *_BASE_*.txt
 *_LOCAL_*.txt
 *_REMOTE_*.txt
-
-# End of https://www.toptal.com/developers/gitignore/api/git
